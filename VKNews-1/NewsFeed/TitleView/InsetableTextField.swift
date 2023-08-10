@@ -9,10 +9,7 @@ import Foundation
 import UIKit
 
 class InsetableTextField: UITextField {
-    
-    
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
