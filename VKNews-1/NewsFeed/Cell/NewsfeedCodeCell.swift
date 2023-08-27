@@ -35,13 +35,13 @@ protocol FeedCellPhotoAttachmentViewModel {
     var height: Int {get}
 }
 
-protocol NewsfeedCodeCellDelegate {
+protocol NewsfeedCodeCellDelegate: AnyObject {
     func revealPost(for cell: NewsfeedCodeCell)
 }
 
 final class NewsfeedCodeCell: UITableViewCell {
     
-    var delegate: NewsfeedCodeCellDelegate?
+   weak var delegate: NewsfeedCodeCellDelegate?
     
     static let reuseId = "NewsfeedCodeCell"
     
