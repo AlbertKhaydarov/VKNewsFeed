@@ -8,20 +8,20 @@
 import Foundation
 import VKSdkFramework
 
-protocol AuthServiceDelegate {
+protocol AuthServiceDelegate: AnyObject {
     func authServiceShouldShow(viewController: UIViewController)
     func authServiceSignIn()
     func authServiceSignInDidFailed()
 }
 
 
-
 class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
+//class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate: AnyObject {
     
     private let appId = "51675804"
     private let vkSdk: VKSdk
     
-    var delegate: AuthServiceDelegate?
+    weak var delegate: AuthServiceDelegate?
     
     var token: String?{
         return VKSdk.accessToken().accessToken
